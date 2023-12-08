@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">    
     <title>change color</title>
-
-
     <style>
      .heading{
         text-transform: uppercase;
@@ -14,15 +12,16 @@
      }
      .button{
         margin-top: 50px;
-       height:150px;
-       width: 150px;    
+       height:100px;
+       width: 100px;    
        justify-content: center;
+       border-radius: 15px;
      }
      .buttons{
         padding: 0px 450px 0px 450px;
      }
     </style>
-</head>
+    </head>
 <body>
     <div class="heading">Color Scheme Switcher</div>
     <!-- <span class="button" id="grey">Grey</span>
@@ -31,12 +30,44 @@
     <span class="button" id="blue">Blue</span> -->
 
     <div class="buttons">
-    <button class="button" id="grey">Grey</button>
-    <button class="button" id="red">Red</button>
-    <button class="button" id="orange">Orange</button>
-    <button class="button" id="blue">Blue</button>
+    <button class="button" style="background-color: Green;" id="Green">Green</button>
+    <button class="button" style="background-color: red;" id="red">Red</button>
+    <button class="button" style="background-color: orange;" id="orange">Orange</button>
+    <button class="button" style="background-color: blue;" id="blue">Blue</button>
 
    </div>
+   <h1 style="text-align: center;">Body color changes according to the button color as we click the button</h1>
 </body>
-<script></script>
+<script>
+const button=document.querySelectorAll(".button")  
+console.log(button)// we get array of buttons and in this we can apply foreach loop
+const body=document.querySelector("body")
+button.forEach(function(button)
+{
+   console.log(button)    //we get all the buttons and on these we can apply eventlistener
+   button.addEventListener('click',function(e)
+   {
+      console.log(e)    //tells the event and inside this there are various properties ex  e.target
+     // console.log(e.target)  //gives the target or button which is targeted
+      body.style.backgroundColor=e.target.id
+      
+      // if(e.target.id==="grey")
+      // {
+      //    body.style.backgroundColor=e.target.id
+      // }
+      // if(e.target.id==="red")
+      // {
+      //    body.style.backgroundColor=e.target.id
+      // }
+      // if(e.target.id==="orange")
+      // {
+      //    body.style.backgroundColor=e.target.id
+      // }
+      // if(e.target.id==="blue")
+      // {
+      //    body.style.backgroundColor=e.target.id
+      // }
+   })
+})
+</script>
 </html>
