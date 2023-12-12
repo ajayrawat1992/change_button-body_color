@@ -32,18 +32,18 @@
     {
       e.preventDefault()  // preventing its default behaviour
       const height=parseInt(document.querySelector("#height").value)//taking value and converting this string value into number
-      //console.log( typeof height)
+      console.log(  height)
       const weight=parseInt(document.querySelector("#weight").value)
       const result=document.querySelector("#results")
       const description=document.querySelector("#description")
        
       if(height===""||height<0|| isNaN(height))  
       {
-         result.innerHTML=`Kindly enter the correct detail`
+         result.innerHTML=`Kindly enter the correct height`
       }
       else if (weight===""||weight<0|| isNaN(weight))
       {
-         result.innerHTML=`Kindly enter the correct detail`
+         result.innerHTML=`Kindly enter the correct weight`
       }
       else {
        const bmi= (weight/ ((height*height)/10000)).toFixed(2)
